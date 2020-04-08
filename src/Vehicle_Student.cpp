@@ -24,7 +24,7 @@ void Vehicle::setCurrentDestination(std::shared_ptr<Intersection> destination)
 
 void Vehicle::simulate()
 {
-    _threads.push_back(std::thread(this -> drive, this));
+    _threads.push_back(std::thread(&Vehicle::drive, this));
 }
 
 // virtual function which is executed in a thread
